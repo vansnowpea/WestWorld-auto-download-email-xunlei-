@@ -91,7 +91,7 @@ def send_email(htm):
     msg = MIMEText(htm, 'html', 'utf-8')
     msg['Subject'] = Header(subject, 'UTF-8')
     msg['From'] = sender
-    msg['To'] = receiver
+    msg['To'] = ','.join(receiver)
     smtp = smtplib.SMTP()
     smtp.connect(smtpserver)
     smtp.login(username, password)
